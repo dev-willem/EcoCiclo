@@ -24,8 +24,8 @@ public class UserController {
         return service.allUsers();
     }
 
-    @GetMapping
-    public Optional<User> getUserDetails(@RequestBody Long id) {
+    @GetMapping("/{id}")
+    public Optional<User> getUserDetails(@PathVariable Long id) {
         return service.getUserDetails(id);
     }
 }
