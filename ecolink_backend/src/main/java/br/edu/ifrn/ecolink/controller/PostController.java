@@ -15,12 +15,12 @@ public class PostController {
     private PostService service;
 
     @PostMapping
-    public Post criarPostagem(@RequestBody Post post) {
+    public Post newPost(@RequestBody Post post) {
         return service.newPost(post);
     }
 
     @GetMapping
-    public List<Post> listarPostagens() {
+    public List<Post> allPosts() {
         return service.allPosts();
     }
 

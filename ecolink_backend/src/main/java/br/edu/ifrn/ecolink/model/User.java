@@ -23,24 +23,24 @@ public class User {
     @Column(name = "username", nullable = false, length = 50)
     private String username;
 
+    @Column(name = "email", nullable = false, length = 100)
+    private String email;
+
     @Column(name = "cpf_cnpj", nullable = false, length = 20)
     private String cpfCnpj;
-
-    @Lob
-    @Column(name = "location", nullable = false)
-    private String location;
 
     @Column(name = "password_hash", nullable = false, length = 60)
     private String passwordHash;
 
-    @Column(name = "email", nullable = false, length = 255)
-    private String email;
+    @Lob
+    @Column(name = "location")
+    private String location;
 
-    @Lob // Se armazenar imagem Base64
+    @Lob
     @Column(name = "img_profile")
     private String imgProfile;
 
-    @CreationTimestamp // Garante que o valor é gerado automaticamente
+    @CreationTimestamp
     @Column(name = "created_at", nullable = false, updatable = false)
     private OffsetDateTime createdAt;
 

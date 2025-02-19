@@ -14,13 +14,13 @@ public class UserController {
     @Autowired
     private UserService service;
 
-    @PostMapping
-    public User createUser(@RequestBody User user) {
-        return service.createUser(user);
+    @PostMapping("/signup")
+    public void signUp(@RequestBody User user) {
+        service.signUp(user.getUsername(), user.getEmail(), user.getPasswordHash(), user.getCpfCnpj());
     }
 
     @GetMapping
-    public List<User> listUsers() {
+    public List<User> allUsers() {
         return service.allUsers();
     }
 

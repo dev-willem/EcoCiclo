@@ -3,6 +3,7 @@ package br.edu.ifrn.ecolink.model;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.OffsetDateTime;
@@ -17,7 +18,6 @@ public class Post {
     @SequenceGenerator(name = "post_id_gen", sequenceName = "post_id_seq", allocationSize = 1)
     private Long id;
 
-    @Lob
     @Column(name = "text")
     private String text;
 
@@ -33,12 +33,18 @@ public class Post {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @CreationTimestamp
-    @Column(name = "created_at", nullable = false, updatable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "repost_id")
+    private Post retpostId;
+
+    @ColumnDefault("now()")
+    @Column(name = "createdat", nullable = false)
     private OffsetDateTime createdAt;
 
     @PrePersist
     protected void onCreate() {
-        this.createdAt = OffsetDateTime.now();
+        if (createdAt == null) {
+            this.createdAt = OffsetDateTime.now();
+        }
     }
 }

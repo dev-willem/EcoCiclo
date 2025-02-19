@@ -5,10 +5,11 @@ import br.edu.ifrn.ecolink.model.User;
 import br.edu.ifrn.ecolink.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Component
+@Service
 public class PostService {
     @Autowired
     private PostRepository repository;
