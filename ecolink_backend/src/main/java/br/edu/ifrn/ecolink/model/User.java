@@ -32,7 +32,6 @@ public class User {
     @Column(name = "password_hash", nullable = false, length = 60)
     private String passwordHash;
 
-    @Lob
     @Column(name = "location")
     private String location;
 
