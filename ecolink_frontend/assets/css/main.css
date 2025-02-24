@@ -1,0 +1,252 @@
+/*MAIN*/
+
+#main {
+    display: flex;
+    flex-direction: column;
+
+    width: min(601px, 100%);
+    overflow-y: auto;
+
+    scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+@media (min-width: 500px) {
+    #main {
+        border-left: 1px solid var(--outline);
+        border-right: 1px solid var(--outline);
+    }
+}
+
+/*TIMELINE*/
+
+#timeline {
+    display: flex;
+    flex-direction: column;
+
+    flex-shrink: 0;
+}
+
+/*TWEETBOX*/
+.feed__header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border: 1px solid var(--twitter-background);
+    padding: 15px 20px;
+}
+
+.feed__header h2 {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.feed::-webkit-scrollbar {
+    display: none;
+}
+
+.feed {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* tweet box */
+.tweetbox__input img {
+    border-radius: 50%;
+    height: 40px;
+}
+
+.tweetBox {
+    padding-bottom: 10px;
+    border-bottom: 8px solid var(--twitter-background);
+    padding-right: 10px;
+}
+
+.tweetBox form {
+    display: flex;
+    flex-direction: column;
+}
+
+.tweetbox__input {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    border-bottom: 1px solid var(--twitter-background);
+}
+
+.tweetbox__input input {
+    flex: 1;
+    margin-left: 20px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+}
+
+.tweetBox__tweetButton {
+    height: 40px;
+    margin-top: 20px;
+    margin-left: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*TWEET*/
+
+.tweet {
+    display: flex;
+    flex-direction: column;
+
+    padding: 14px 16px;
+
+    border-bottom: 1px solid var(--outline);
+
+    max-width: 100%;
+}
+
+@media (max-width:500px) {
+    .tweet:last-child {
+        margin-bottom: 40px;
+    }
+}
+
+.retweeted {
+    display: flex;
+    align-items: center;
+
+    color: var(--gray);
+    font-size: 13px;
+}
+
+.retweeted i {
+    margin-left: 35px;
+    margin-right: 10px;
+
+    font-size: 14px;
+}
+
+.tweet-body {
+    display: flex;
+    margin-top: 3px;
+
+    position: relative;
+}
+
+.tweet .avatar {
+    height: 49px;
+    width: 49px;
+    flex-shrink: 0;
+
+    border-radius: 50%;
+    background-color: var(--gray);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.tweet-content {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    margin-top: 2px;
+    padding-left: 62px;
+}
+
+.tweet-header {
+    display: flex;
+    align-items: center;
+
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.tweet-header strong {
+    margin-right: 5px;
+}
+
+.tweet-header span,
+time {
+    color: var(--gray);
+}
+
+.tweet-header span,
+strong {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.tweet-header .dot {
+    background-color: var(--gray);
+    height: 2px;
+    width: 2px;
+
+    margin: 0 10px;
+    border-radius: 50%;
+}
+
+.tweet-message {
+    font-size: 15px;
+    margin-top: 4px;
+}
+
+.tweet-image {
+    width: 100%;
+    height: min(285px, max(175px, 41vw));
+    margin-top: 10px;
+
+    background-color: var(--gray);
+    border-radius: 14px;
+
+    cursor: pointer;
+}
+
+.tweet-image:hover {
+    opacity: .7;
+}
+
+.tweet-stats {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+    margin: 11px auto 0;
+    width: 100%;
+}
+
+.tweet-stats div {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    color: var(--gray);
+}
+
+.tweet-stats div i {
+    margin-right: 5px;
+}
+
+.tweet-stats div:nth-child(2) {
+    color: var(--retweet);
+}
+
+.tweet-stats div:nth-child(3) {
+    color: var(--like);
+}
+
+.tweet-stats div:hover {
+    opacity: .7;
+}
+
+@media (min-width: 330px) {
+    .tweet-stats {
+        width: 63%;
+    }
+}

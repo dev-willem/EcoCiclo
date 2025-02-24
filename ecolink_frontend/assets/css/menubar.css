@@ -1,0 +1,203 @@
+/*MENU BAR*/
+
+#menu-bar {
+    display: none;
+}
+
+@media (min-width: 500px) {
+    #menu-bar {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        position: sticky;
+        top: 0;
+        left: 0;
+
+        max-height: 100vh;
+        overflow-y: auto;
+
+        padding: 9px 19px 20px;
+    }
+
+    #logo {
+        color: var(--secondary);
+        font-size: 30px;
+
+        margin-bottom: 20px;
+        cursor: pointer;
+
+        padding: 8.25px 10px;
+        border-radius: 25px;
+    }
+
+    #logo:hover {
+        background-color: var(--twitter-light-hover);
+        color: var(--white);
+    }
+
+    .top-area,
+    .menu-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-item {
+        color: var(--secondary);
+        display: flex;
+        align-items: center;
+
+        flex-shrink: 0;
+        padding: 8.25px;
+        outline: 0;
+
+        cursor: pointer;
+        border-radius: 25px;
+    }
+
+    .menu-item:hover {
+        color: var(--twitter);
+    }
+
+    .menu-item+.menu-item {
+        margin-top: 16px;
+    }
+
+    .menu-item i {
+        font-size: 24px;
+        flex-shrink: 0;
+    }
+
+    .menu-item span {
+        display: none;
+    }
+
+    .menu-item.active {
+        color: var(--twitter);
+    }
+
+    .menu-item.active:hover {
+        color: var(--twitter-light-hover);
+    }
+
+    .top-area button {
+        margin-top: 33px;
+
+        height: 40px;
+        width: 40px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .top-area button i {
+        font-size: 20px;
+    }
+
+    .top-area button span {
+        display: none;
+    }
+
+    .bottom-area {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        margin-top: 20px;
+    }
+
+    .bottom-area .user {
+        display: flex;
+        align-items: center;
+    }
+
+    .bottom-area .avatar {
+        height: 39px;
+        width: 39px;
+
+        border-radius: 50%;
+        background-color: var(--secondary);
+        flex-shrink: 0;
+    }
+
+    .bottom-area .user-info {
+        display: none;
+    }
+
+    .bottom-area .exit-button {
+        display: none;
+    }
+}
+
+@media (min-width: 1280px) {
+    #menu-bar {
+        width: 280px;
+    }
+
+    .top-area,
+    .bottom-area {
+        width: 100%;
+    }
+
+    .top-area,
+    .menu-buttons {
+        align-items: flex-start;
+    }
+
+    .menu-item {
+        justify-content: flex-start;
+        padding: 8.25px 12px;
+        width: fit-content;
+    }
+
+    .menu-item span {
+        display: inline;
+        margin-left: 19px;
+
+        font-weight: bold;
+        font-size: 19px;
+    }
+
+    .top-area button {
+        height: unset;
+        width: 100%
+    }
+
+    .top-area button span {
+        display: inline;
+    }
+
+    .top-area button i {
+        display: none;
+    }
+
+    .bottom-area {
+        cursor: pointer;
+        border-radius: 25px;
+        padding: 7px 10px;
+    }
+
+    .bottom-area:hover {
+        background-color: var(--twitter-light-hover);
+    }
+
+    .bottom-area .user-info {
+        display: flex;
+        flex-direction: column;
+        font-size: 14px;
+
+        margin-left: 10px;
+    }
+
+    .bottom-area .user-info span {
+        color: var(--gray);
+    }
+
+    .bottom-area .exit-button {
+        display: inline-block;
+        margin-left: 30px;
+    }
+}
