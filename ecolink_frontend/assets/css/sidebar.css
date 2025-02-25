@@ -20,6 +20,8 @@
         width: min(399px, 100%);
         padding: 10px 24px;
 
+        background-color: var(--white);
+
         position: fixed;
         top: 0;
         z-index: 2;
