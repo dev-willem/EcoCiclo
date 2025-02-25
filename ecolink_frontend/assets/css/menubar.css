@@ -1,7 +1,49 @@
 /*MENU BAR*/
 
-#menu-bar {
-    display: none;
+@media (max-width: 500px) {
+    #menu-bar {
+        display: flex;
+        width: 100%;
+        gap: 10px;
+    }
+    
+    #menu-bar .top-area {
+        display: flex;
+        width: 100%;
+    }
+    
+    #menu-bar .top-area .menu-buttons {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+    #menu-bar .top-area .menu-buttons .menu-item {
+        padding: 4px;
+        font-size: 24px;
+    }
+    
+    #menu-bar .top-area .menu-buttons .menu-item span {
+        display: none;
+    }
+    
+    #logo {
+        color: var(--secondary);
+        
+        cursor: pointer;
+    
+        padding: 4px;
+        border-radius: 25px;
+        margin-right: 10px;
+    }
+    
+    #logo img {
+        width: 38px;
+    }
+
+    .bottom-area {
+        display: none;
+    }
 }
 
 @media (min-width: 500px) {
@@ -116,7 +158,7 @@
         align-items: center;
     }
 
-    .bottom-area .avatar {
+    .bottom-area .avatar, .bottom-area .avatar img {
         height: 39px;
         width: 39px;
 

@@ -59,6 +59,12 @@ body {
     justify-content: center;
 }
 
+@media (max-width: 500px) {
+    #container {
+        flex-direction: column-reverse;
+    }
+}
+
 /*BUTTONS*/
 
 button {
