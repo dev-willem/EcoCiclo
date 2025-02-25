@@ -35,7 +35,7 @@ public class Post {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "repost_id")
-    private Post retpostId;
+    private Post repostId;
 
     @ColumnDefault("now()")
     @Column(name = "createdat", nullable = false)

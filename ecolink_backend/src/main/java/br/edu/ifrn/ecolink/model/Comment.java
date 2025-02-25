@@ -28,15 +28,15 @@ public class Comment {
     private String image;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "userId", nullable = false)
+    @JoinColumn(name = "user", nullable = false)
     private User userId;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "postID", nullable = false)
+    @JoinColumn(name = "post", nullable = false)
     private Post postId;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "parentCommentId")
+    @JoinColumn(name = "parentComment")
     private Comment parentCommentId;
 
     @ColumnDefault("now()")
