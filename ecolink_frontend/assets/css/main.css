@@ -197,7 +197,7 @@ strong {
     margin-top: 4px;
 }
 
-.tweet-image {
+.tweet-image img {
     width: 100%;
     height: min(285px, max(175px, 41vw));
     margin-top: 10px;
