@@ -21,35 +21,25 @@ public class Comment {
     @Column(name = "text", length = Integer.MAX_VALUE)
     private String text;
 
-    @Lob
     @Column(name = "video", length = Integer.MAX_VALUE)
     private String video;
 
-    @Lob
     @Column(name = "image", length = Integer.MAX_VALUE)
     private String image;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "userid", nullable = false)
-    private User user;
+    @JoinColumn(name = "userId", nullable = false)
+    private User userId;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "postid", nullable = false)
-    private Post post;
+    @JoinColumn(name = "postID", nullable = false)
+    private Post postId;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "parentcommentid")
-    private Comment parentComment;
+    @JoinColumn(name = "parentCommentId")
+    private Comment parentCommentId;
 
     @ColumnDefault("now()")
-    @Column(name = "createdat", nullable = false)
+    @Column(name = "createdAt", nullable = false)
     private OffsetDateTime createdAt;
-
-    @PrePersist
-    public void prePersist() {
-        if (this.createdAt == null) {
-            this.createdAt = OffsetDateTime.now();
-        }
-    }
-
 }
