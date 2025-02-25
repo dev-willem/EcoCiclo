@@ -22,11 +22,15 @@ public class UserService {
         repository.save(user);
     }
 
-    public List<User> allUsers() {
+    private void deleteById(Long id) {
+        repository.deleteById(id);
+    }
+
+    private List<User> findAll() {
         return repository.findAll();
     }
 
-    public Optional<User> getUserDetails(Long id) {
+    private Optional<User> findById(Long id) {
         return repository.findById(id);
     }
 }

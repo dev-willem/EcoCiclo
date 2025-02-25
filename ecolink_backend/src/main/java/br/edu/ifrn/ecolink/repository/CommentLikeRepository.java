@@ -1,6 +1,13 @@
 package br.edu.ifrn.ecolink.repository;
 
+import br.edu.ifrn.ecolink.model.CommentLike;
+import br.edu.ifrn.ecolink.model.CommentLikeId;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CommentLikeRepository extends JpaRepository<CommentLikeRepository, Long> {
+import java.util.Optional;
+
+public interface CommentLikeRepository extends JpaRepository<CommentLike, Long> {
+    void deleteById(CommentLikeId id);
+
+    Optional<CommentLike> findById(CommentLikeId id);
 }
