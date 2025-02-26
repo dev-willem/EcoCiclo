@@ -27,7 +27,7 @@ public class PostService {
         return repository.findAll();
     }
 
-    private Optional<Post> findById(Long id) {
+    public Optional<Post> findById(Long id) {
         return repository.findById(id);
     }
 

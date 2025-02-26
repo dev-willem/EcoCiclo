@@ -1,5 +1,6 @@
 package br.edu.ifrn.ecolink.service;
 
+import br.edu.ifrn.ecolink.model.Post;
 import br.edu.ifrn.ecolink.model.Repost;
 import br.edu.ifrn.ecolink.model.RepostId;
 import br.edu.ifrn.ecolink.repository.RepostRepository;
@@ -28,5 +29,9 @@ public class RepostService {
 
     private Optional<Repost> findById(RepostId id) {
         return repository.findById(id);
+    }
+
+    public Long countByPost(Post post) {
+        return repository.countByPost(post);
     }
 }

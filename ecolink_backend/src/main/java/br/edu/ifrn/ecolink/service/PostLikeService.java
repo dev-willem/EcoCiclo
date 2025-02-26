@@ -1,5 +1,6 @@
 package br.edu.ifrn.ecolink.service;
 
+import br.edu.ifrn.ecolink.model.Post;
 import br.edu.ifrn.ecolink.model.PostLike;
 import br.edu.ifrn.ecolink.model.PostLikeId;
 import br.edu.ifrn.ecolink.repository.PostLikeRepository;
@@ -28,5 +29,8 @@ public class PostLikeService {
 
     private Optional<PostLikeId> findById(PostLikeId id) {
         return repository.findById(id);
+    }
+
+    public Long countByPost(Post post) {
     }
 }
