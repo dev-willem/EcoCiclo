@@ -12,7 +12,7 @@ import java.time.OffsetDateTime;
 @Entity
 @Table(name = "users", uniqueConstraints = {
         @UniqueConstraint(columnNames = "email"),
-        @UniqueConstraint(columnNames = "cpf_cnpj")
+        @UniqueConstraint(columnNames = "cpfCnpj")
 })
 public class User {
     @Id
@@ -26,21 +26,21 @@ public class User {
     @Column(name = "email", nullable = false, length = 100)
     private String email;
 
-    @Column(name = "cpf_cnpj", nullable = false, length = 20)
+    @Column(name = "cpfCnpj", nullable = false, length = 20)
     private String cpfCnpj;
 
-    @Column(name = "password_hash", nullable = false, length = 60)
+    @Column(name = "passwordHash", nullable = false, length = 60)
     private String passwordHash;
 
-    @Column(name = "location")
-    private String location;
+    @Column(name = "adress")
+    private String adress;
 
     @Lob
-    @Column(name = "img_profile")
+    @Column(name = "imgProfile")
     private String imgProfile;
 
     @CreationTimestamp
-    @Column(name = "created_at", nullable = false, updatable = false)
+    @Column(name = "createdAt", nullable = false, updatable = false)
     private OffsetDateTime createdAt;
 
     @PrePersist

@@ -10,9 +10,9 @@ import java.time.OffsetDateTime;
 @Getter
 @Setter
 @Entity
-@Table(name = "tweetLikes")
+@Table(name = "postLikes")
 public class PostLike {
-    @SequenceGenerator(name = "tweetLikes_id_gen", sequenceName = "tweet_id_seq", allocationSize = 1)
+    @SequenceGenerator(name = "postLikes_id_gen", sequenceName = "post_id_seq", allocationSize = 1)
     @EmbeddedId
     private PostLikeId id;
 

@@ -30,15 +30,15 @@ public class Post {
     private String image;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "userId", nullable = false)
     private User user;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "repost_id")
+    @JoinColumn(name = "repostId")
     private Post repostId;
 
     @ColumnDefault("now()")
-    @Column(name = "createdat", nullable = false)
+    @Column(name = "createdAt", nullable = false)
     private OffsetDateTime createdAt;
 
     @PrePersist
