@@ -15,7 +15,7 @@ public class PostService {
     @Autowired
     private PostRepository repository;
 
-    private Post save(Post post) {
+    public Post save(Post post) {
         return repository.save(post);
     }
 
@@ -23,7 +23,7 @@ public class PostService {
         repository.deleteById(id);
     }
 
-    private List<Post> findAll() {
+    public List<Post> findAll() {
         return repository.findAll();
     }
 

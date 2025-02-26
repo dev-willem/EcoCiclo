@@ -13,24 +13,29 @@ public class UserService {
     @Autowired
     private UserRepository repository;
 
-    public void signUp(String username, String password, String email, String CpfCnpj) {
-        User user = new User();
-        user.setUsername(username);
-        user.setPasswordHash(password);
-        user.setEmail(email);
-        user.setCpfCnpj(CpfCnpj);
-        repository.save(user);
+    public User save(User user) {
+        return repository.save(user);
     }
+
+//    public void signUp(String username, String password, String email, String CpfCnpj) {
+//        User user = new User();
+//        user.setUsername(username);
+//        user.setPasswordHash(password);
+//        user.setEmail(email);
+//        user.setCpfCnpj(CpfCnpj);
+//        repository.save(user);
+//    }
 
     private void deleteById(Long id) {
         repository.deleteById(id);
     }
 
-    private List<User> findAll() {
+    public List<User> findAll() {
         return repository.findAll();
     }
 
-    private Optional<User> findById(Long id) {
+    public Optional<User> findById(Long id) {
         return repository.findById(id);
     }
+
 }

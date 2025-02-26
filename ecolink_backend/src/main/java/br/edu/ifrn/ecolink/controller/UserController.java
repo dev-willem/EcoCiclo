@@ -3,6 +3,7 @@ package br.edu.ifrn.ecolink.controller;
 import br.edu.ifrn.ecolink.model.User;
 import br.edu.ifrn.ecolink.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,17 +16,17 @@ public class UserController {
     private UserService service;
 
     @PostMapping("/signup")
-    public void signUp(@RequestBody User user) {
-        service.signUp(user.getUsername(), user.getEmail(), user.getPasswordHash(), user.getCpfCnpj());
+    public ResponseEntity<User> sign(@RequestBody User user) {
+        return ResponseEntity.ok(service.save(user));
     }
 
     @GetMapping
-    public List<User> allUsers() {
-        return service.allUsers();
+    public ResponseEntity<List<User>> getAllUser() {
+        return ResponseEntity.ok(service.findAll());
     }
 
     @GetMapping("/{id}")
     public Optional<User> getUserDetails(@PathVariable Long id) {
-        return service.getUserDetails(id);
+            return service.findById(id);
     }
 }
