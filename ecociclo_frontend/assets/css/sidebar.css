@@ -4,6 +4,10 @@
     display: none;
 }
 
+.topic {
+    flex-direction: column;
+}
+
 @media (min-width: 1000px) {
     #side-bar {
         display: flex;

@@ -5,6 +5,7 @@
         display: flex;
         width: 100%;
         gap: 10px;
+        border-top: 1px solid var(--secondary);
     }
     
     #menu-bar .top-area {
@@ -20,7 +21,7 @@
     
     #menu-bar .top-area .menu-buttons .menu-item {
         padding: 4px;
-        font-size: 24px;
+        font-size: 28px;
     }
     
     #menu-bar .top-area .menu-buttons .menu-item span {
